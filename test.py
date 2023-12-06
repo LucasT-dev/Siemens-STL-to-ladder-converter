@@ -1,2 +1,0 @@
-"""function"""
-print("hello world")
