@@ -1,0 +1,21 @@
+###################
+#Conversion type :
+# 1 = Lisp to Literal
+# 2 = Lisp to Ladder
+#
+- conversion =0
+###################
+
+###################
+# File Lisp name
+# Example =Test.txt
+#
+- lispName =test
+###################
+
+###################
+# Directory Lisp name
+# Example =C:\\Temp\\
+#
+- directoryName =C:\\Temp\\
+###################
