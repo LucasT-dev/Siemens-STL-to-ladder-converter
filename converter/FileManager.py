@@ -36,7 +36,7 @@ class FileManager:
 
         else:
 
-            self.getReadLispFile()
+            self.createLispReadFile()
 
             if self.conversionType == 1:
                 self.createLiteralFile()
@@ -53,6 +53,9 @@ class FileManager:
 
     def getFileExist(self) -> bool:
         return os.path.isfile(self.lispPath)
+
+    def createLispReadFile(self):
+        self.lispRead = open(self.lispPath, "r")
 
     def createLiteralFile(self):
         self.literalWrite = open(self.literalPath, "x")
