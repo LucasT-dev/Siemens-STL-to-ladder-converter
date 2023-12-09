@@ -35,15 +35,15 @@ class FileManager:
             sys.exit()
 
         else:
-            self.createLiteralFile()
-            self.createLadderFile()
 
             self.getReadLispFile()
 
             if self.conversionType == 1:
+                self.createLiteralFile()
                 self.getWriteLiteralFile()
 
             elif self.conversionType == 2:
+                self.createLadderFile()
                 self.getWriteLadderFile()
 
             else:
