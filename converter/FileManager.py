@@ -1,23 +1,34 @@
 import logging
 import os
 import sys
+import time
 
 
 class FileManager:
 
     # conversionType : 0 = none; 1 = to Literal; 2 = to ladder
     def __init__(self, lispNameFile, directory, conversionType):
+
+        self.named_tuple = time.localtime()  # get struct_time
+        self.time_string = time.strftime(" %Y_%m_%d %H_%M_%S ", self.named_tuple)
+
         self.lispNameFile = lispNameFile
         self.directory = directory
         self.conversionType = int(conversionType)
         self.lispPath = self.directory + self.lispNameFile
-        self.literalPath = self.directory + "LispLiteral"
-        self.ladderPath = self.directory + "Ladder"
+        self.literalPath = self.directory + "LispLiteral" + self.time_string + ".txt"
+        self.ladderPath = self.directory + "Ladder" + self.time_string + ".txt"
         self.lispRead = None
         self.literalWrite = None
         self.ladderWrite = None
 
+        logging.debug("File date :" + self.time_string)
+
     def start(self):
+
+        self.lispPath = self.lispPath.replace("\n", "")
+        self.literalPath = self.literalPath.replace("\n", "")
+        self.ladderPath = self.ladderPath.replace("\n", "")
 
         if not self.getFileExist():
             logging.error("Lisp File not find; disable program")
