@@ -39,7 +39,7 @@ class ConfigManager:
         return self.conversionType
 
     def getLispNameFile(self) -> str:
-        return str(self.conversionType)
+        return str(self.lispNameFile)
 
     def getDirectory(self) -> str:
-        return str(self.conversionType)
+        return str(self.directory)
