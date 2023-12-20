@@ -4,7 +4,7 @@ import string
 
 class FileAdvancedManager:
 
-    def __init__(self, pathFile: string):
+    def __init__(self, pathFile: str):
 
         self.pathFile = pathFile
         self.write = None
@@ -105,7 +105,7 @@ class FileAdvancedManager:
             ligne = lignes[lineIndex].rstrip('\n')
             ligne_completee = ligne.ljust(length, char)
 
-            # Mettre à jour la ligne dans la liste
+            # Update row in list
             lignes[lineIndex] = ligne_completee + '\n'
 
             with open(self.pathFile, 'w') as filew:
@@ -133,3 +133,15 @@ class FileAdvancedManager:
                 filew.writelines(lignes)
         else:
             logging.error("Invalid index, beyond file size")
+
+    def addReturnAtLine(self):
+
+        # Open the file in append mode to add
+        with open(self.pathFile, 'a') as file:
+            file.write('\n')  # Ajouter un saut de ligne
+
+    def addLine(self, text: str):
+
+        # Open the file in append mode to add a line at the end
+        with open(self.pathFile, 'a') as file:
+            file.write(text + '\n')
