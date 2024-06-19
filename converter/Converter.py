@@ -192,6 +192,9 @@ class Converter:
 
                         matrix[row][column] = "──┤/├──" + addTiret
 
+
+                # END NETWORKS
+
                 if oldSymbol == "=":
 
                     matrix[lineEndNetwork-1][9] = adresse
@@ -199,7 +202,23 @@ class Converter:
                     row += 1
                     column = 0
 
-                    #print(matrix)
+                    newNetworks = True
+
+                if oldSymbol == "R":
+
+                    matrix[lineEndNetwork-1][9] = adresse
+                    matrix[lineEndNetwork][9] = "──(R)──"
+                    row += 1
+                    column = 0
+
+                    newNetworks = True
+
+                if oldSymbol == "S":
+
+                    matrix[lineEndNetwork-1][9] = adresse
+                    matrix[lineEndNetwork][9] = "──(S)──"
+                    row += 1
+                    column = 0
 
                     newNetworks = True
                     
