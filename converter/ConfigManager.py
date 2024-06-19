@@ -20,8 +20,6 @@ class ConfigManager:
                 s = i.split("=")[0]
                 s1 = i.split("=")[1]
 
-                print(s1)
-
                 if str(s1).startswith("0"):
                     logging.error("Please configure the configuration file")
                     sys.exit()

@@ -1,6 +1,8 @@
 import logging
 import sys
 
+from converter.Converter import Converter
+from converter.FileAdvancedManager import FileAdvancedManager
 from converter.FileManager import FileManager
 from converter.ConfigManager import ConfigManager
 
@@ -8,7 +10,6 @@ memoryStorage = {}
 
 
 def main():
-
     logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.DEBUG)
     logging.info("Converter enable")
 
@@ -18,6 +19,13 @@ def main():
     memory("FileManager", FileManager(memory("config").getLispNameFile(), memory("config").getDirectory(),
                                       memory("config").getConversionType()))
     memory("FileManager").start()
+
+    memory("lisp", FileAdvancedManager(memory("FileManager").getLadderPath()))
+
+    memory("converter", Converter(memory("config").getConversionType(), memory("FileManager").getReadLispFile(),
+                                  memory("FileManager").getWriteLadderFile(), memory("lisp")))
+
+    memory("converter").start()
 
 
 def printMemory():

@@ -3,19 +3,19 @@
 # 1 = Lisp to Literal
 # 2 = Lisp to Ladder
 #
-- conversion =0
+- conversion =2
 ###################
 
 ###################
 # File Lisp name
-# Example =Test.txt
+# Example =TEST.txt
 #
-- lispName =test
+- lispName =TEST.txt
 ###################
 
 ###################
 # Directory Lisp name
-# Example =C:\\Temp\\
+# Example =C://Temp\\
 #
-- directoryName =C:\\Temp\\
+- directoryName =C://Temp//
 ###################

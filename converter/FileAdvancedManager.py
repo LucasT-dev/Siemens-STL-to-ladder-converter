@@ -140,8 +140,12 @@ class FileAdvancedManager:
         with open(self.pathFile, 'a') as file:
             file.write('\n')  # Ajouter un saut de ligne
 
-    def addLine(self, text: str):
+    def addLine(self, text: str) -> int:
 
         # Open the file in append mode to add a line at the end
         with open(self.pathFile, 'a') as file:
+            current_position = file.tell()
+
             file.write(text + '\n')
+
+            return current_position

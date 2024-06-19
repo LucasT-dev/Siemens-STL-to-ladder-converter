@@ -3,6 +3,8 @@ import os
 import sys
 import time
 
+from converter.FileAdvancedManager import FileAdvancedManager
+
 
 class FileManager:
 
@@ -18,6 +20,7 @@ class FileManager:
         self.lispPath = self.directory + self.lispNameFile
         self.literalPath = self.directory + "LispLiteral" + self.time_string + ".txt"
         self.ladderPath = self.directory + "Ladder" + self.time_string + ".txt"
+
         self.lispRead = None
         self.literalWrite = None
         self.ladderWrite = None
@@ -61,7 +64,7 @@ class FileManager:
         self.literalWrite = open(self.literalPath, "x")
 
     def createLadderFile(self):
-        self.ladderWrite = open(self.ladderPath, "x")
+        self.ladderWrite = open(self.ladderPath, "x", newline='\n')
 
     def closeAllFile(self):
         self.lispRead.close()
@@ -76,3 +79,6 @@ class FileManager:
 
     def getWriteLadderFile(self):
         return self.ladderWrite
+
+    def getLadderPath(self):
+        return self.ladderPath
