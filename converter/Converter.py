@@ -21,8 +21,8 @@ class Converter:
 
     def start(self):
 
-        self.fileAdvandedManager.addLine(self.newNetwork())
-        self.fileAdvandedManager.addReturnAtLine()
+        #self.fileAdvandedManager.addLine(self.newNetwork())
+        #self.fileAdvandedManager.addReturnAtLine()
 
         columns = 15
         rows = 300
@@ -92,9 +92,9 @@ class Converter:
 
                         # rattrapper le texte
                         if len(adresse)-7 > 0:
-                            addTiret = '-' * (len(adresse)-7) + '--'
+                            addTiret = '─' * (len(adresse)-7) + '──'
 
-                        matrix[row][column] = "--| |--" + addTiret
+                        matrix[row][column] = "──┤ ├──" + addTiret
 
 
 
@@ -106,9 +106,9 @@ class Converter:
 
                         # rattrapper le texte
                         if len(adresse) - 7 > 0:
-                            addTiret = '-' * (len(adresse) - 7) + '--'
+                            addTiret = '─' * (len(adresse) - 7) + '──'
 
-                        matrix[row][column] = "--| |--" + addTiret
+                        matrix[row][column] = "──┤ ├──" + addTiret
 
                 if oldSymbol == "UN":
 
@@ -119,9 +119,9 @@ class Converter:
 
                         # rattrapper le texte
                         if len(adresse) - 7 > 0:
-                            addTiret = '-' * (len(adresse) - 7) + '--'
+                            addTiret = '─' * (len(adresse) - 7) + '──'
 
-                        matrix[row][column] = "--|/|--" + addTiret
+                        matrix[row][column] = "──┤/├──" + addTiret
 
                         firstCondition = False
 
@@ -131,9 +131,9 @@ class Converter:
 
                         # rattrapper le texte
                         if len(adresse) - 7 > 0:
-                            addTiret = '-' * (len(adresse) - 7) + '--'
+                            addTiret = '─' * (len(adresse) - 7) + '──'
 
-                        matrix[row][column] = "--|/|--" + addTiret
+                        matrix[row][column] = "──┤/├──" + addTiret
 
                 if oldSymbol == "O":
 
@@ -145,23 +145,23 @@ class Converter:
 
                         # rattrapper le texte
                         if len(adresse) - 7 > 0:
-                            addTiret = '-' * (len(adresse) - 7) + '--'
+                            addTiret = '─' * (len(adresse) - 7) + '──'
 
-                        matrix[row][column] = "--| |--" + addTiret
+                        matrix[row][column] = "──┤ ├──" + addTiret
 
                         firstCondition = False
 
                     else:
 
                         row += 2
-                        matrix[row][column] = adresse + "  "
+                        matrix[row][column] = adresse + "  │"
                         row += 1
 
                         # rattrapper le texte
                         if len(adresse) - 7 > 0:
-                            addTiret = '-' * (len(adresse) - 7) + '--'
+                            addTiret = '─' * (len(adresse) - 7) + '──┘'
 
-                        matrix[row][column] = "--| |--" + addTiret
+                        matrix[row][column] = "──┤ ├──" + addTiret
 
 
                 if oldSymbol == "ON":
@@ -174,28 +174,28 @@ class Converter:
 
                         # rattrapper le texte
                         if len(adresse) - 7 > 0:
-                            addTiret = '-' * (len(adresse) - 7) + '--'
+                            addTiret = '─' * (len(adresse) - 7) + '──'
 
-                        matrix[row][column] = "--|/|--" + addTiret
+                        matrix[row][column] = "──┤/├──" + addTiret
 
                         firstCondition = False
 
                     else:
 
                         row += 2
-                        matrix[row][column] = adresse + "  "
+                        matrix[row][column] = adresse + "  │"
                         row += 1
 
                         # rattrapper le texte
                         if len(adresse) - 7 > 0:
-                            addTiret = '-' * (len(adresse) - 7) + '--'
+                            addTiret = '─' * (len(adresse) - 7) + '──┘'
 
-                        matrix[row][column] = "--|/|--" + addTiret
+                        matrix[row][column] = "──┤/├──" + addTiret
 
                 if oldSymbol == "=":
 
                     matrix[lineEndNetwork-1][9] = adresse
-                    matrix[lineEndNetwork][9] = "--( )--"
+                    matrix[lineEndNetwork][9] = "──( )──"
                     row += 1
                     column = 0
 
