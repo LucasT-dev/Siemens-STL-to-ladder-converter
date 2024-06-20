@@ -193,6 +193,35 @@ class Converter:
                         matrix[row][column] = "──┤/├──" + addTiret
 
 
+                if oldSymbol == "FN":
+
+                    column += 1
+                    matrix[lineEndNetwork-1][column] = adresse + "  "
+                    #row += 1
+
+                    # rattrapper le texte
+                    if len(adresse) - 7 > 0:
+                        addTiret = '─' * (len(adresse) - 7) + '──'
+
+                    matrix[lineEndNetwork][column] = "──┤N├──" + addTiret
+
+                    firstCondition = False
+
+                if oldSymbol == "FP":
+
+                    column += 1
+                    matrix[lineEndNetwork - 1][column] = adresse + "  "
+                    # row += 1
+
+                    # rattrapper le texte
+                    if len(adresse) - 7 > 0:
+                        addTiret = '─' * (len(adresse) - 7) + '──'
+
+                    matrix[lineEndNetwork][column] = "──┤P├──" + addTiret
+
+                    firstCondition = False
+
+
                 # END NETWORKS
 
                 if oldSymbol == "=":
